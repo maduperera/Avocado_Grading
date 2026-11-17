@@ -1,0 +1,22 @@
+feature,AUC_fruit_level,direction
+logImax_g,0.9621000000000001,Mature higher
+logdc_g,0.9571000000000001,Mature higher
+logImax_r,0.9558,Mature higher
+logdc_r,0.9465,Mature higher
+logImin_g,0.9324,Mature higher
+logImin_r,0.9040999999999999,Mature higher
+logImax_b,0.9,Mature higher
+logdc_b,0.892,Mature higher
+logImin_b,0.8462,Mature higher
+ratio_dc_rb,0.7844,Mature higher
+DoLP_r,0.7636999999999999,Mature higher
+ratio_DoLP_rb,0.7595000000000001,Mature higher
+ratio_dc_gb,0.757,Mature higher
+ext_r,0.7565000000000001,Mature lower
+DoLP_g,0.6534,Mature higher
+ext_g,0.6508,Mature lower
+ratio_DoLP_gb,0.6376,Mature higher
+ratio_DoLP_rg,0.6113,Mature higher
+DoLP_b,0.5688,Mature higher
+ext_b,0.5598000000000001,Mature lower
+ratio_dc_rg,0.5098,Mature higher
