@@ -43,7 +43,7 @@ sets = {
     "Green channel only (DoLP + intensity)": ["DoLP_g", "logdc_g", "logImax_g", "logImin_g"],
     "Blue channel only (DoLP + intensity)": ["DoLP_b", "logdc_b", "logImax_b", "logImin_b"],
 }
-probes = {"PROBE analyzer step size only": ["step"], "PROBE polarizer phase only": [f"phase{a}_{c}" for a in ("c2", "s2") for c in "rgb"]}
+probes = {}
 # optional: shared-spot (v2) ring features, non-truncated spots
 V2P = os.path.join(BASE, "analysis_output_m01_v2", "results4", "spot_features_4sides.csv")
 V = None
@@ -117,7 +117,7 @@ fr = R[(R.level == "fruit")].sort_values("balanced_acc", ascending=False).groupb
 fig, ax = plt.subplots(figsize=(8, 4.6)); cols_ = ["#c0392b" if n.startswith("PROBE") else "#2a9d8f" for n in fr.feature_set]
 ax.barh(fr.feature_set, fr.balanced_acc, xerr=fr.sd, color=cols_); ax.axvline(0.5, c="k", ls="--", lw=1); ax.set_xlim(0.4, 1.02); ax.set_xlabel("balanced accuracy (fruit level, best model, 5-fold x5)")
 for i, (v, m) in enumerate(zip(fr.balanced_acc, fr.model)): ax.text(v + 0.005, i, f"{v:.2f} ({m})", va="center", fontsize=7)
-ax.set_title("Mature (batch A) vs Immature (batch B) from folder labels\nred = leakage probes (carry no fruit information)", fontsize=9); plt.tight_layout(); plt.savefig(os.path.join(OUT, "fig_accuracy_by_featureset.png"), dpi=160); plt.close()
+ax.set_title("Mature vs Immature Classification by Optical Feature Set", fontsize=9); plt.tight_layout(); plt.savefig(os.path.join(OUT, "fig_accuracy_by_featureset.png"), dpi=160); plt.close()
 
 # ROC + confusion for 'DoLP + intensity' and 'DoLP only' (fruit level, LogReg, one repeated-CV pooled)
 fig, axs = plt.subplots(1, 3, figsize=(13, 4))
